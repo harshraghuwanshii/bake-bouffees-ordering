@@ -40,6 +40,8 @@ type Item = {
 
 const FLAVORS = ["Vanilla", "Chocolate", "Red Velvet"];
 const SIZES = ["0.5 Kg", "1 Kg", "2 Kg"];
+const DEFAULT_FLAVOR = "Vanilla";
+const DEFAULT_SIZE = "0.5 Kg";
 const CATEGORIES: Category[] = ["Custom Cakes", "Cupcakes", "Baking Hampers"];
 
 const ITEMS: Item[] = [
@@ -125,7 +127,7 @@ function App() {
   const total = cart.reduce((s, l) => s + l.qty * l.price, 0);
   const visible = useMemo(() => ITEMS.filter((i) => i.category === category), [category]);
 
-  const optFor = (id: string) => options[id] ?? { flavor: FLAVORS[0], size: SIZES[0] };
+  const optFor = (id: string) => options[id] ?? { flavor: DEFAULT_FLAVOR, size: DEFAULT_SIZE };
 
   const setOpt = (id: string, patch: Partial<{ flavor: string; size: string }>) =>
     setOptions((prev) => ({ ...prev, [id]: { ...optFor(id), ...patch } }));
