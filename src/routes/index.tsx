@@ -1,9 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
 
-import cake136 from "@/assets/cake-136.png.asset.json";
-import cake137 from "@/assets/cake-137.png.asset.json";
-import cake138 from "@/assets/cake-138.png.asset.json";
+const cake136 = { url: "/cake-136.png" };
+const cake137 = { url: "/cake-137.png" };
+const cake138 = { url: "/cake-138.png" };
 
 export const Route = createFileRoute("/")({
   head: () => ({
